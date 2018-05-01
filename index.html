@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>AngularJS Plunker</title>
+    <script>document.write('<base href="' + document.location + '" />');</script>
+    <link rel="stylesheet" href="style.css" />
+    <script data-require="angular.js@1.5.x" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.min.js" data-semver="1.5.11"></script>
+    <script src="restaurants.js"></script>
+    <script src="app.js"></script>
+  </head>
+
+  <body ng-controller="MainCtrl">
+    <h3>Find open restaurants</h3>
+    <input type="date" ng-model="selectedDate">
+    <input type="time" ng-model="selectedTime">
+    <button ng-click="searchRestaurants()">Search</button>
+    
+    <ul>
+      <li ng-repeat="restaurant in openRestaurants">
+        <h4>{{restaurant}}</h4>
+      </li>
+    </ul>
+  </body>
+
+</html>
